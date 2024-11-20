@@ -1,0 +1,16 @@
+# Vulnérabilité critique 0-day dans FortiManager activement exploitée (FG-IR-24-423 alias FortiJump)
+
+Résumé
+Une vulnérabilité critique 0-day est activement exploitée (lien pour nos clients Managed Vulnerability Intelligence-watch ici). Cette 0-day a fait l'objet de discussions officieuses, avant que de premiers détails sur les versions affectées et corrigées soient donnés. Davantage d’informations ont ensuite été révélées dans un article de blog écrit par le chercheur en sécurité Kevin Beaumont et dans les commentaires de discussions Reddit. 
+
+Cette vulnérabilité critique affecte la majorité des versions de FortiManager de Fortinet, une solution utilisée pour gérer les produits de ce fournisseur, notamment les pare-feu FortiGate, en automatisant les opérations et déploiements de sécurité. Seules les instances exposées publiquement semblent avoir été compromises à ce jour. 
+
+Le bulletin de sécurité est disponible publiquement à cette URL de Fortinet et concerne un problème d'authentification dans le démon fgfmd (protocole FortiGate vers FortiManager) qui permet à un attaquant distant non authentifié d'exécuter des commandes arbitraires sur le Manager. Le score CVSS v3.1 de la vulnérabilité est évalué à 9,8 par le fournisseur. 
+
+Aucun détail sur les groupes d'attaquants ayant exploité le 0-day n'a été fourni, mais le procédé montre une similitude frappante avec les précédentes activités d'APT chinois. En effet, cette compromission massive d'une solution de sécurité périmétrique est similaire aux campagnes précédemment identifiées contre Fortigate et VPN SSL ou des pares-feux d'autres fournisseurs majeurs. Ce type d’attaques avancées est généralement mené par des acteurs étatiques, souvent dans un but d'espionnage ou de pré-positionnement dans des réseaux sensibles. 
+
+Des logs spécifiques et des adresses IP ont été fournies par Fortinet pour rechercher une éventuelle compromission des FortiManager. Si de premières reconnaissances massives ont été identifiées à partir de la mi-juillet, l’exploitation massive a surtout eu lieu le 22 septembre. 
+
+Le niveau de menace de cet avis est donc considéré comme très élevé (5/5, niveau de gravité maximal). 
+
+Les administrateurs des quelques milliers d’instances FortiManager exposées sont invités à vérifier immédiatement si leurs dispositifs ont été exposés depuis juillet et, le cas échéant, s’ils ont été compromis en utilisant les indicateurs de compromission fournis par Fortinet. En effet, les attaquants ont pu utiliser les accès obtenus sur FortiManager pour voler des fichiers de configuration (y compris des secrets d'authentification), ot ont également pu utiliser ces accès pour tenter de pivoter vers les pares-feux FortiGate ou modifier leurs configurations de sécurité, entre autres.  
